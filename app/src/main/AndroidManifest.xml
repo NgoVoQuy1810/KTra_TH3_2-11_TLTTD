@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DatPhong_2415053122236">
         <activity
-            android:name=".MainActivity"
+            android:name=".DatPhongActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
