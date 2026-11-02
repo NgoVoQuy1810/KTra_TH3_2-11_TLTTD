@@ -29,5 +29,12 @@ class XacNhanActivity : AppCompatActivity() {
         }
 
         findViewById<MaterialButton>(R.id.btnSua).setOnClickListener { finish() }
+        findViewById<MaterialButton>(R.id.btnXacNhan).setOnClickListener {
+            if (don != null) {
+                val maDon = DatPhongHelper.taoMaDon(don)
+                setResult(RESULT_OK, android.content.Intent().apply { putExtra("ma_don", maDon) })
+                finish()
+            }
+        }
     }
 }
