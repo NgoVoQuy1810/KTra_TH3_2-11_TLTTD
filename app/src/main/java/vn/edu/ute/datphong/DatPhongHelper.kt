@@ -27,4 +27,12 @@ object DatPhongHelper {
 
         return tienPhong + phuThu
     }
+
+    fun taoMaDon(don: vn.edu.ute.datphong.DonDatPhong): String {
+        val ddMM = don.ngayNhan.substring(0, 5).replace("/", "")
+        return "DP236-${ddMM}-${don.maLoaiPhong.uppercase()}"
+    }
+    fun locTheoSoKhach(ds: List<LoaiPhong>, soKhach: Int): List<LoaiPhong> {
+        return ds.filter { it.sucChua >= soKhach }.sortedBy { it.giaMotDem }
+    }
 }
