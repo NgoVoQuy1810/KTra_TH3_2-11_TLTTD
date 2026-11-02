@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarXacNhan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:title="Xác nhận đặt phòng"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardThongTin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarXacNhan">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView android:id="@+id/txtHoTen" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="16sp" android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/txtSdt" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="16sp" android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/txtEmail" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="16sp" android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/txtLoaiPhong" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/txtNgayNhan" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="16sp" android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/txtSoDem" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="16sp" android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/txtSoKhach" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="16sp" android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/txtTongTien"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tổng tiền: 0 đ"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSua"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="24dp"
+        android:text="QUAY LẠI SỬA"
+        app:layout_constraintEnd_toStartOf="@id/btnXacNhan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardThongTin" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnXacNhan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="24dp"
+        android:text="XÁC NHẬN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnSua"
+        app:layout_constraintTop_toBottomOf="@id/cardThongTin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
