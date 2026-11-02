@@ -67,23 +67,7 @@ class DatPhongActivity : AppCompatActivity() {
 
         btnDatPhong.setOnClickListener {
             if (kiemTraHopLe()) {
-                val don = vn.edu.ute.datphong.DonDatPhong(
-                    edtHoTen.text.toString().trim(),
-                    edtSdt.text.toString().trim(),
-                    edtEmail.text.toString().trim(),
-                    loaiPhongHienTai.ma,
-                    edtNgayNhan.text.toString().trim(),
-                    edtSoDem.text.toString().toInt(),
-                    edtSoKhach.text.toString().toInt()
-                )
-                val tien = DatPhongHelper.tinhTienPhong_2415053122236(
-                    loaiPhongHienTai, don.soDem, don.soKhach
-                )
-                val intent = android.content.Intent(this, XacNhanActivity::class.java).apply {
-                    putExtra("don_dat_phong", don)
-                    putExtra("tong_tien", tien)
-                }
-                startActivity(intent)
+                Toast.makeText(this, "Đã ghi nhận đơn đặt phòng của ${edtHoTen.text.toString().trim()}", Toast.LENGTH_SHORT).show()
             } else {
                 Snackbar.make(it, "Vui lòng kiểm tra lại thông tin", Snackbar.LENGTH_SHORT).show()
             }
@@ -94,7 +78,7 @@ class DatPhongActivity : AppCompatActivity() {
         val soDem = edtSoDem.text.toString().toIntOrNull() ?: 0
         val soKhach = edtSoKhach.text.toString().toIntOrNull() ?: 0
         val tien = DatPhongHelper.tinhTienPhong_2415053122236(loaiPhongHienTai, soDem, soKhach)
-        txtTamTinh.text = "Tạm tính: ${tien.dinhDangTien()}"
+        txtTamTinh.text = "Tạm tính: $tien"
     }
 
     private fun kiemTraHopLe(): Boolean {
